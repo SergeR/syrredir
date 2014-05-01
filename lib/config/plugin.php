@@ -2,7 +2,7 @@
 
 return array(
     'name' => 'Custom shop redirects',
-    'description' => 'Ручное указание редиректов',
+    'description' => 'Ручное указание переадресаций',
     'vendor'=>670917,
     'version'=>'1.0.0',
     'img'=>'img/redirect.png',
