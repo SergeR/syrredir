@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shop/plugins/syrredir\n"
+"POT-Creation-Date: 2014-05-03 21:01+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator:  shop/plugins/syrredir\n"
+"Language-Team:  shop/plugins/syrredir\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: en_US\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirIndex.html:21
+msgid "Edit"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirIndex.html:22
+msgid "Delete"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirIndex.html:2
+msgid "No redirects defined"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirIndex.html:4
+msgid "Current redirect rules"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirIndex.html:8
+msgid "From"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirIndex.html:10
+msgid "To"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirIndex.html:11
+msgid "Actions"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirSettings.html:1
+msgid "Custom Redirects"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirSettings.html:7
+msgid "Old URL"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirSettings.html:9
+msgid "New URL"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirSettings.html:16
+msgid "Save"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/templates/actions/syrredir/SyrredirSettings.html:58
+msgid "Delete this rule?"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/lib/actions/routes/shopSyrredirPluginRoutes.actions.php:100
+msgid "Error deleting record #"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/lib/actions/routes/shopSyrredirPluginRoutes.actions.php:94
+msgid "Invalid record ID"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/lib/config/plugin.php:4
+msgid "Redirect rules"
+msgstr ""
+
+#: /wa-apps/shop/plugins/syrredir/lib/config/plugin.php:5
+msgid "User-defined redirect rules"
+msgstr ""

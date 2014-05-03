@@ -16,7 +16,7 @@ class shopSyrredirPluginModel extends waModel
     public function save($data) {
         
         if(isset($data['id'])) {
-            return $this->updateById($id, $data);
+            return $this->updateById($data['id'], $data);
         }
 
         return $this->insert($data);

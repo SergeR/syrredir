@@ -40,7 +40,7 @@ class shopSyrredirPluginRoutesActions extends waViewActions
             if(!$from || !$to) {
                 throw new waException('Invalid routes');
             }
-            
+            /*
             if(substr($from, -1) != '/') {
                 $from .= '/';
             }
@@ -48,7 +48,7 @@ class shopSyrredirPluginRoutesActions extends waViewActions
             if(substr($to, -1) != '/') {
                 $to .= '/';
             }
-
+            */
             $row = $this->SyrRedyr->getByField('old_route', $from);
             
             $data = array('old_route'=>$from, 'new_route'=>$to);

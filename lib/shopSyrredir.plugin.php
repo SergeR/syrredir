@@ -33,4 +33,11 @@ class shopSyrredirPlugin extends shopPlugin
             }
         }
     }
+    
+    public function install() {
+        
+        waLog::log("Install Called", 'syrredir.log');
+        
+        parent::install();
+    }
 }

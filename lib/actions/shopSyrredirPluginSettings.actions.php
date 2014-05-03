@@ -16,7 +16,7 @@ class shopSyrredirPluginSettingsActions extends waViewActions
 
     public function defaultAction()
     {
-        $this->template = 'Settings';
+        $this->setTemplate('Settings');
     }
     
 }
