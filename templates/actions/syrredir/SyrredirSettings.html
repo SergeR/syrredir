@@ -42,7 +42,6 @@
         $("#SaveBtn").click(function(){
             $.post('?plugin=syrredir&module=routes&action=save', $("#NewRoute").serialize())
                 .success(function(result){
-                    console.log(result);
                     if(result.error !== undefined) {
                         showError(result.error);
                     } else {
@@ -77,7 +76,6 @@
             }
         });
         $("#syrRedirList").on("click", "button[data-action='edit']",function(){
-            console.log($(this).closest("tr").find("td[data-content='new-route']").text());
             $("#NewRoute input[name='id']").val($(this).closest("*[data-id]").data('id'));
             $("#NewRoute input[name='new_route']").val($(this).closest("tr").find("td[data-content='new-route']").text());
             $("#NewRoute input[name='old_route']").val($(this).closest("tr").find("td[data-content='old-route']").text()).focus();
