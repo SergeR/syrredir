@@ -2,9 +2,20 @@
 
 <form id="NewRoute">
     <input type="hidden" name="id" value="0">
-    <input type="text" name="old_route">
-    <input type="text" name="new_route">
-    <button id="SaveBtn" type="button">{_wp('Save')}</button>
+    <table>
+        <tr>
+            <th>{_wp('Old URL')}</th>
+            <th></th>
+            <th>{_wp('New URL')}</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>/<input type="text" name="old_route"></td>
+            <td>&rarr;</td>
+            <td>/<input type="text" name="new_route"></td>
+            <td><button id="SaveBtn" type="button">{_wp('Save')}</button></td>
+        </tr>
+    </table>
 </form>
 <div class="error" id="ErrorMsg" style="display: none"></div>
 <div id="syrRedirList"></div>

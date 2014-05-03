@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    'name' => 'Custom shop redirects',
-    'description' => 'Ручное указание переадресаций',
+    'name' => 'Redirect rules',
+    'description' => 'User-defined redirect rules',
     'vendor'=>670917,
     'version'=>'1.0.0',
     'img'=>'img/redirect.png',
@@ -13,4 +13,5 @@ return array(
     'handlers' => array(
         'frontend_error' => 'frontendError',
     ),
+    'locale' => array('en_US', 'ru_RU')
 );
