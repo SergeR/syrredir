@@ -32,12 +32,5 @@ class shopSyrredirPlugin extends shopPlugin
                 waSystem::getInstance()->getResponse()->redirect(waSystem::getInstance()->getRootUrl() . $new_route, 301);
             }
         }
-    }
-    
-    public function install() {
-        
-        waLog::log("Install Called", 'syrredir.log');
-        
-        parent::install();
-    }
+    }    
 }
