@@ -1,0 +1,28 @@
+{if !$routes}
+    <p class="info">{_wp('No redirects defined')}</p>
+{else}
+    <h2>{_wp('Current redirect rules')}</h2>
+    <table class="table zebra">
+        <thead>
+            <tr>
+                <th>{_wp('From')}</th>
+                <th></th>
+                <th>{_wp('To')}</th>
+                <th>{_wp('Actions')}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach $routes as $r}
+                <tr>
+                    <td data-content="old-route">{$r['old_route']}</td>
+                    <td>&rarr;</td>
+                    <td data-content="new-route">{$r['new_route']}</td>
+                    <td data-id="{$r['id']}">
+                        <button type="button" data-action="edit"><i class="icon16 edit"></i>{_wp("Edit")}</button>
+                        <button type="button" data-action="delete">{_wp("Delete")}</button>
+                    </td>
+                </tr>
+            {/foreach}
+        </tbody>
+    </table>
+{/if}

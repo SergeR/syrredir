@@ -6,6 +6,7 @@ return array(
     'vendor'=>670917,
     'version'=>'1.0.0',
     'img'=>'img/redirect.png',
+    'shop_settings' => TRUE,
     'icons'=>array(
         16 => 'img/redirect.png',
     ),

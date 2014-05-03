@@ -1,0 +1,81 @@
+<h1>{_wp("Custom Redirects")}</h1>
+
+<form id="NewRoute">
+    <input type="hidden" name="id" value="0">
+    <input type="text" name="old_route">
+    <input type="text" name="new_route">
+    <button id="SaveBtn" type="button">{_wp('Save')}</button>
+</form>
+<div class="error" id="ErrorMsg" style="display: none"></div>
+<div id="syrRedirList"></div>
+
+<script>
+    function loadRules() {
+        $.get('?plugin=syrredir&module=routes&action=index')
+            .success(function(data){
+                $("#syrRedirList").html(data);
+            });
+    };
+    function showError(error) {
+        $("#ErrorMsg").text(error);
+        $("#ErrorMsg").slideDown(500, function(){
+            setTimeout(function(){
+                $("#ErrorMsg").slideUp(500, function(){
+                    $("#ErrorMsg").text("");
+                });},
+                5000);
+        });
+    };
+    $(function(){
+        loadRules();
+        $("#SaveBtn").click(function(){
+            $.post('?plugin=syrredir&module=routes&action=save', $("#NewRoute").serialize())
+                .success(function(result){
+                    console.log(result);
+                    if(result.error !== undefined) {
+                        showError(result.error);
+                    } else {
+                        $.get('?plugin=syrredir&module=routes&action=index')
+                            .success(function(){
+                                $("#NewRoute")[0].reset();
+                                loadRules();
+                            });
+                    }
+                });
+        });
+        $("#syrRedirList").on("click", "button[data-action='delete']", function(){
+            if(confirm('{_wp('Delete this rule?')}')) {
+                $.post('?plugin=syrredir&module=routes&action=delete', {
+                    id:$(this).closest("*[data-id]").data('id')
+                })
+                .success(function(result){
+                    if(result['error'] !== undefined) { }
+                    else {
+                        $("#syrRedirList *[data-id="+result.id+"]")
+                            .closest('tr')
+                            .find('td')
+                            .wrapInner('<div style="display: block;" />')
+                            .parent()
+                            .find("td > div")
+                            .slideUp(400, function(){
+                                $(this).closest('tr').remove();
+                                if(!$("#syrRedirList tbody > tr").length) loadRules();
+                        });
+                    }
+                });
+            }
+        });
+        $("#syrRedirList").on("click", "button[data-action='edit']",function(){
+            console.log($(this).closest("tr").find("td[data-content='new-route']").text());
+            $("#NewRoute input[name='id']").val($(this).closest("*[data-id]").data('id'));
+            $("#NewRoute input[name='new_route']").val($(this).closest("tr").find("td[data-content='new-route']").text());
+            $("#NewRoute input[name='old_route']").val($(this).closest("tr").find("td[data-content='old-route']").text()).focus();
+        });
+    });
+</script>
+<style>
+p.info, #ErrorMsg { border-radius: 3px; padding: 7px 12px; background-color: #fcc; color: #cd0a0a; border: 1px solid #d99; }
+#NewRoute { margin-bottom: 15px; }
+#syrRedirList { margin: 15px 0; }
+p.info { border-color: #7ac; background-color: #def; color: #049;  }
+</style>

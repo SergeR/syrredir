@@ -22,20 +22,15 @@ class shopSyrredirPlugin extends shopPlugin
     
     public function frontendError($params) {
         
-        if($params->getCode() != 404) {
-            return ;
+        if($params->getCode() == 404) {
+
+            $url = waSystem::getInstance()->getRouting()->getCurrentUrl();
+
+            $new_route = $this->SyrRedir->findRedirectFrom($url);
+
+            if($new_route) {
+                waSystem::getInstance()->getResponse()->redirect(waSystem::getInstance()->getRootUrl() . $new_route, 301);
+            }
         }
-        
-        $url = waSystem::getInstance()->getRouting()->getCurrentUrl();
-        
-        waLog::log("URL: $url", 'syrredir.log');
-        
-        $new_route = $this->SyrRedir->getByField('old_route', $url);
-        
-        if(!$new_route) {
-            return ;
-        }
-        
-        waSystem::getInstance()->getResponse()->redirect($new_route, 301);
     }
 }
